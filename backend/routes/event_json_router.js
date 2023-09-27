@@ -9,7 +9,7 @@ const router = express.Router();
 const eventController = require('../controllers/event-controller');
 const path = require('path');
 const Event = require("../models/event");
-const Category = require("../models/category_schema");
+const Category = require("../models/category");
 const Counter = require("../models/counter");
 const VIEWS_PATH = path.join(__dirname, '../views/event/');
 /**

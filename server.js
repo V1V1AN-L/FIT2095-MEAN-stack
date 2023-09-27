@@ -46,7 +46,7 @@ let counterInstance;
  * @function
  */
 async function createCounter(){
-    const Counter = require("./models/counter");
+    const Counter = require("./backend/models/counter");
     counterInstance = await Counter.create({});
 }
 
@@ -89,8 +89,8 @@ app.set('view engine', 'html');
  * This block imports and uses the router for category-related routes.
  * It maps the router to the root URL path ('/') to handle category-related requests.
  */
-const Counter = require("./models/counter");
-const routerCategory = require("./routes/category_json_router");
+const Counter = require("./backend/models/counter");
+const routerCategory = require("./backend/routes/category_json_router");
 app.use('/', routerCategory);
 
 /**
@@ -99,7 +99,7 @@ app.use('/', routerCategory);
  * This block imports and uses the router for event-related routes.
  * It maps the router to the root URL path ('/') to handle event-related requests.
  */
-const eventRouter = require("./routes/event_json_router");
+const eventRouter = require("./backend/routes/event_json_router");
 // const Counter = require("./models/counter");
 app.use('/', eventRouter);
 

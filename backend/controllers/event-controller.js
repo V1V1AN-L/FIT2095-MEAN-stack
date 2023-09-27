@@ -4,7 +4,7 @@
  *
  */
 const Event = require("../models/event");
-const Category = require("../models/category_schema");
+const Category = require("../models/category");
 const Counter = require("../models/counter");
 
 /**

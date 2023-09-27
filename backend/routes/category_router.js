@@ -24,7 +24,6 @@ const router = express.Router();
  * Category model for managing category data.
  * @const
  */
-const Category = require('../models/category');
 
 /**
  * Middleware to parse incoming form data.
