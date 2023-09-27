@@ -21,7 +21,7 @@ router.use(express.urlencoded({extended:true}));
 
 /**
  * Route to create a new event.
- * @name POST /zecan/api/v1/add-event
+ * @name POST /zecan/api/v1/event
  * @function
  * @param {function} eventController.createEvent - Controller function to handle event creation.
  */
