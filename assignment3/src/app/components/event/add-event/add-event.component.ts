@@ -13,7 +13,7 @@ export class AddEventComponent {
   durationInMinutes: number = 0;
   isActive: boolean = true;
   image: string = '';
-  capacity: number = 0;
+  capacity: number = 1000;
   ticketsAvailable: number = 0;
   categories:string = '';
 
@@ -24,13 +24,14 @@ export class AddEventComponent {
       startDateTime: this.startDateTime, durationInMinutes: this.durationInMinutes, isActive: this.isActive,
       image: this.image, capacity: this.capacity, ticketsAvailable: this.ticketsAvailable, categories: this.categories};
 
-    this.eventDatabaseService.addEvent(eventObj).subscribe(
-      (result: any) => {
+    this.eventDatabaseService.addEvent(eventObj).subscribe({
+      next:(result: any) => {
        this.router.navigate(['/list-events']);
       },
-      (error: any) => {
+      error:(error: any) => {
+        this.router.navigate(['/invalid-data']);
         console.log(error);
-      }
+      }}
     );
   }
 }

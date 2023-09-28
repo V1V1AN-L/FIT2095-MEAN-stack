@@ -72,8 +72,8 @@ const path = require("path");
  */
 app.use(express.static("node_modules/bootstrap/dist/css"));
 app.use(express.static("images"));
-const VIEWS_PATH = path.join(__dirname, '/views/');
 
+app.use(express.static(path.join(__dirname, 'assignment3/dist/assignment3')));
 /**
  * Configure View Engine
  *

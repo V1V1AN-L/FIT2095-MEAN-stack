@@ -95,7 +95,7 @@ async function getAllEvents(req, res) {
 async function deleteEventById(req, res) {
     try {
         // Find the event to delete by event ID.
-        let event = await Event.findOne({ eventID: req.body.eventId });
+        let event = await Event.findOne({ eventID: req.query.eventId });
 
         if (!event) {
             // If the event is not found, send a status message.
@@ -165,10 +165,27 @@ async function updateEventById(req, res) {
     }
 }
 
+async function getEventById(req, res) {
+    try {
+        const event = await Event.findOne({ eventID: req.query.eventId });
+
+        if (!event) {
+            // If the event is not found, send a status message.
+            res.status(400).json({ status: 'Event not found' });
+            return;
+        }
+
+        res.json(event);
+    } catch (err) {
+        res.status(500).json({ error: err });
+    }
+}
+
 // Export the functions for use in other modules.
 module.exports = {
     createEvent,
     getAllEvents,
     deleteEventById,
-    updateEventById
+    updateEventById,
+    getEventById
 };

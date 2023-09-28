@@ -1,1 +1,19 @@
-<p>update-event works!</p>
+<div class="container mt-5 d-flex flex-column align-items-center">
+  <img src="./assets/images/Design2.png" alt="Heading Image" class="img-fluid mb-4">
+  <h1 class="text-center mb-4">Update Event</h1>
+  <div class="form-group">
+    <label for="eventID">Event ID:</label>
+    <input type="text" class="form-control" id="eventID" [(ngModel)]="eventId" placeholder="Enter event Id" required>
+  </div>
+  <div class="form-group">
+    <label for="name">New Event Name:</label>
+    <input type="text" class="form-control" id="name" [(ngModel)]="name" placeholder="Enter event name" required>
+  </div>
+
+  <div class="form-group">
+    <label for="capacity">New Capacity:</label>
+    <input type="number" class="form-control" id="capacity" [(ngModel)]="capacity" placeholder="Event capacity" required>
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="onUpdateEvent()">Update</button>
+
+</div>

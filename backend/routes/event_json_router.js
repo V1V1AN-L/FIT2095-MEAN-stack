@@ -51,6 +51,15 @@ router.delete('/zecan/api/v1/delete-event', eventController.deleteEventById);
  */
 router.put('/zecan/api/v1/update-event', eventController.updateEventById);
 
+/**
+ * Route to get an event by ID.
+ * @name GET /zecan/api/v1/event/:eventID
+ * @function
+ * @param {function} eventController.getEventById - Controller function to handle event retrieval by ID.
+ * @param {string} eventID - Event ID to retrieve.
+ */
+router.post('/zecan/api/v1/display-event', eventController.getEventById);
+
 /*************************************************Below are A1 APIs*********************************************************/
 /**
  * Route to send the event creation form to clients.

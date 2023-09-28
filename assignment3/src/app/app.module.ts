@@ -11,13 +11,15 @@ import {RouterModule, Routes} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
 import {EventDatabaseService} from "./services/event-database.service";
 import {FormsModule} from "@angular/forms";
+import { InvalidDataComponent } from './components/event/invalid-data/invalid-data.component';
 
 const routes: Routes = [
   {path: 'add-event', component: AddEventComponent},
   {path: 'list-events', component: ListEventsComponent},
   {path: 'delete-events', component: DeleteEventsComponent},
   {path: 'display-event', component: DisplayEventComponent},
-  {path: 'update-event', component: UpdateEventComponent}
+  {path: 'update-event', component: UpdateEventComponent},
+  {path: 'invalid-data', component: InvalidDataComponent}
 ];
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ const routes: Routes = [
     ListEventsComponent,
     DeleteEventsComponent,
     DisplayEventComponent,
-    UpdateEventComponent
+    UpdateEventComponent,
+    InvalidDataComponent
   ],
   imports: [
     BrowserModule, RouterModule.forRoot(routes, {useHash: true}), HttpClientModule, FormsModule

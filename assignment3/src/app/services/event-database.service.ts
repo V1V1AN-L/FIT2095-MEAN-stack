@@ -9,22 +9,31 @@ export class EventDatabaseService {
 
   constructor(private http: HttpClient) { }
 
+  eventId: string = '';
+
   addEvent(event: any) {
     return this.http.post('/zecan/api/v1/add-event', event, httpOptions);
   }
+
 
   listEvents() {
     return this.http.get('/zecan/api/v1/events');
   }
 
   deleteEvent(eventId: any) {
-    let url = '/zecan/api/v1/delete-event/' + eventId; // url is correct??
-    return this.http.delete('/zecan/api/v1/delete-event', httpOptions);
+    let url = '/zecan/api/v1/delete-event/?eventId=' + eventId; // url is correct??
+    console.log(url);
+    return this.http.delete(url, httpOptions);
   }
 
-  updateEvent(eventId: any, data: any) {
-    let url = '/zecan/api/v1/update-event/' + eventId;
+  updateEvent(data: any) {
+    let url = '/zecan/api/v1/update-event/';
     return this.http.put(url, data, httpOptions);
+  }
+
+  displayEvent(eventId: any) {
+    let url = '/zecan/api/v1/display-event/?eventId=' + eventId;
+    return this.http.post(url,httpOptions);
   }
 
 }

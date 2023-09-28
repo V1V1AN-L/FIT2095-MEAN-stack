@@ -1,1 +1,43 @@
-<p>delete-events works!</p>
+<div class="container mt-5">
+  <div class="text-center">
+    <img src="./assets/images/Design.gif" alt="Header GIF" class="img-fluid mb-4">
+    <h1 class="text-center mb-4">Event List</h1>
+  </div>
+
+  <table class="table table-bordered">
+    <thead class="thead-light">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Duration</th>
+      <th>Is Active</th>
+      <th>Capacity</th>
+      <th>Tickets Available</th>
+      <th>Category ID</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let event of eventDB">
+      <td>{{event.eventID }}</td>
+      <td>{{event.name }}</td>
+      <td>{{event.startDate }}</td>
+      <td>{{event.endDate }}</td>
+      <td>{{event.displayDuration }}</td>
+      <!--            <td>-->
+      <!--                <% if (event.isActive) { }}-->
+      <!--    <span>&#10004;</span> &lt;!&ndash; Unicode character for a tick mark &ndash;&gt;-->
+      <!--    <% } }}-->
+      <!--            </td>-->
+
+      <td>{{event.isActive }}</td>
+      <td>{{event.capacity }}</td>
+      <td>{{event.ticketsAvailable }}</td>
+      <td>{{event.categories }}</td>
+      <td><button type="submit" class="btn btn-primary"  (click)="onDeleteEvent(event.eventID)">Delete</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

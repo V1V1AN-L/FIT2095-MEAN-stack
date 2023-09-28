@@ -1,1 +1,51 @@
-<p>display-event works!</p>
+<div class="container mt-5">
+  <div class="text-center">
+    <img src="./assets/images/Design.gif" alt="Header GIF" class="img-fluid mb-4">
+    <h1 class="text-center mb-4">Event Detail</h1>
+  </div>
+
+  <table class="table table-bordered">
+    <thead class="thead-light">
+    <tr>
+      <th>Object Id</th>
+      <td>{{ event._id }}</td>
+    </tr>
+    <tr>
+      <th>Event Id</th>
+      <td>{{ event.eventID }}</td>
+    </tr>
+    <tr>
+      <th>Event Name</th>
+      <td>{{ event.name }}</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td>{{ event.description }}</td>
+    </tr>
+    <tr>
+      <th>Start Date Time</th>
+      <td>{{ event.startDate }}</td>
+    </tr>
+    <tr>
+      <th>Duration (minutes)</th>
+      <td>{{ event.displayDuration }}</td>
+    </tr>
+    <tr>
+      <th>Is Active</th>
+      <td>{{ event.isActive }}</td>
+    </tr>
+    <tr>
+      <th>Capacity</th>
+      <td>{{ event.capacity }}</td>
+    </tr>
+    <tr>
+      <th>Tickets Available</th>
+      <td>{{ event.ticketsAvailable }}</td>
+    </tr>
+    <tr>
+      <th>Categories</th>
+      <td>{{ event.categories }}</td>
+    </tr>
+    </thead>
+  </table>
+</div>

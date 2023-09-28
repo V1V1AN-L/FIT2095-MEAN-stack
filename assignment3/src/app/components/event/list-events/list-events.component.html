@@ -1,8 +1,8 @@
 <div class="container mt-5">
-<!--  <div class="text-center">-->
-<!--    <img src="/Design.gif" alt="Header GIF" class="img-fluid header-image">-->
-<!--    <h1 class="text-center mb-4">Event List</h1>-->
-<!--  </div>-->
+  <div class="text-center">
+    <img src="./assets/images/Design.gif" alt="Header GIF" class="img-fluid mb-4">
+    <h1 class="text-center mb-4">Event List</h1>
+  </div>
 
   <table class="table table-bordered">
     <thead class="thead-light">
@@ -36,7 +36,8 @@
             <td>{{event.capacity }}</td>
             <td>{{event.ticketsAvailable }}</td>
             <td>{{event.categories }}</td>
-<!--            <td><a href="/32418361/event/{{event[i].eventID }}" class="btn btn-primary">View</a></td>-->
+            <td><button type="submit" class="btn btn-primary" (click)="viewEvent(event.eventID)">View</button>
+            </td>
         </tr>
     </tbody>
   </table>
