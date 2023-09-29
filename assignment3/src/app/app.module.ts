@@ -11,7 +11,9 @@ import {RouterModule, Routes} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
 import {EventDatabaseService} from "./services/event-database.service";
 import {FormsModule} from "@angular/forms";
-import { InvalidDataComponent } from './components/event/invalid-data/invalid-data.component';
+import { InvalidDataComponent } from './components/invalid-data/invalid-data.component';
+import { ShowStatisticComponent } from './components/event/show-statistic/show-statistic.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {path: 'add-event', component: AddEventComponent},
@@ -19,7 +21,9 @@ const routes: Routes = [
   {path: 'delete-events', component: DeleteEventsComponent},
   {path: 'display-event', component: DisplayEventComponent},
   {path: 'update-event', component: UpdateEventComponent},
-  {path: 'invalid-data', component: InvalidDataComponent}
+  {path: 'invalid-data', component: InvalidDataComponent},
+  {path: 'show-statistic', component: ShowStatisticComponent},
+  {path: '*', component: PageNotFoundComponent}
 ];
 @NgModule({
   declarations: [
@@ -29,7 +33,9 @@ const routes: Routes = [
     DeleteEventsComponent,
     DisplayEventComponent,
     UpdateEventComponent,
-    InvalidDataComponent
+    InvalidDataComponent,
+    ShowStatisticComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule, RouterModule.forRoot(routes, {useHash: true}), HttpClientModule, FormsModule

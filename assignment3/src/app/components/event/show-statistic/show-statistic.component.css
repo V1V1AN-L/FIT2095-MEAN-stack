@@ -1,0 +1,11 @@
+.panel-container {
+  display: flex;
+  justify-content: space-between; /* Adjust as needed */
+}
+
+.panel {
+  text-align: center; /* Optional, for centering content */
+  flex: 1; /* Distribute available space equally among panels */
+  border: 1px solid #ccc; /* Optional, add borders for separation */
+  padding: 10px; /* Optional, add padding for spacing */
+}

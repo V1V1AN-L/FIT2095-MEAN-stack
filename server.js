@@ -70,18 +70,18 @@ const path = require("path");
  * This block configures various middlewares to be used by the server.
  * It serves Bootstrap CSS files and static images from specified directories.
  */
-app.use(express.static("node_modules/bootstrap/dist/css"));
-app.use(express.static("images"));
+// app.use(express.static("node_modules/bootstrap/dist/css"));
+// app.use(express.static("images"));
 
 app.use(express.static(path.join(__dirname, 'assignment3/dist/assignment3')));
-/**
- * Configure View Engine
- *
- * This block configures the view engine to render HTML files using EJS.
- * It sets the view engine to 'html' and configures EJS to render HTML files.
- */
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
+// /**
+//  * Configure View Engine
+//  *
+//  * This block configures the view engine to render HTML files using EJS.
+//  * It sets the view engine to 'html' and configures EJS to render HTML files.
+//  */
+// app.engine('html', require('ejs').renderFile);
+// app.set('view engine', 'html');
 
 /**
  * Configuring Routes for Categories - Student 1 Tasks - Carter Chin
@@ -90,6 +90,9 @@ app.set('view engine', 'html');
  * It maps the router to the root URL path ('/') to handle category-related requests.
  */
 const Counter = require("./backend/models/counter");
+const counterRouter = require("./backend/routes/counter_router");
+app.use('/', counterRouter);
+
 const routerCategory = require("./backend/routes/category_json_router");
 app.use('/', routerCategory);
 
@@ -100,32 +103,31 @@ app.use('/', routerCategory);
  * It maps the router to the root URL path ('/') to handle event-related requests.
  */
 const eventRouter = require("./backend/routes/event_json_router");
-// const Counter = require("./models/counter");
 app.use('/', eventRouter);
 
-/**
- * Default Route
- * @function
- * @param {object} request - Express request object.
- * @param {object} response - Express response object.
- * @description This route sends the index.html file to the client when they access the root URL.
- * @name GET /
- */
-app.get("/", async function (req, res) {
-    let document = await Counter.findOne({});
-    let eventsCount = document.eventsCount;
-    let categoriesCount =  document.categoriesCount;
-    let addCount = document.addCount;
-    let updateCount = document.updateCount;
-    let deleteCount = document.deleteCount;
-
-    res.render("index",
-        {currentEventsCounter: eventsCount,
-            currentCategoryCounter: categoriesCount,
-            recordsCreated: addCount,
-            recordsDeleted: deleteCount,
-            recordsUpdated: updateCount});
-});
+// /**
+//  * Default Route
+//  * @function
+//  * @param {object} request - Express request object.
+//  * @param {object} response - Express response object.
+//  * @description This route sends the index.html file to the client when they access the root URL.
+//  * @name GET /
+//  */
+// app.get("/", async function (req, res) {
+//     let document = await Counter.findOne({});
+//     let eventsCount = document.eventsCount;
+//     let categoriesCount =  document.categoriesCount;
+//     let addCount = document.addCount;
+//     let updateCount = document.updateCount;
+//     let deleteCount = document.deleteCount;
+//
+//     res.render("index",
+//         {currentEventsCounter: eventsCount,
+//             currentCategoryCounter: categoriesCount,
+//             recordsCreated: addCount,
+//             recordsDeleted: deleteCount,
+//             recordsUpdated: updateCount});
+// });
 
 app.get("*", function (request, response) {
     response.redirect('/');

@@ -61,7 +61,7 @@ async function createEvent(req, res) {
         res.json({ eventId: anEvent.eventID });
     } catch (err) {
         // Handle errors and send an error response.
-        res.status(500).json({ error: err });
+        res.status(400).json({ error: err });
     }
 }
 
@@ -122,7 +122,7 @@ async function deleteEventById(req, res) {
         res.json({ acknowledged: true, deletedCount: 1 });
     } catch (err) {
         // Handle errors and send an error response.
-        res.status(500).json({ error: err });
+        res.status(400).json({ error: err });
     }
 }
 
@@ -161,7 +161,7 @@ async function updateEventById(req, res) {
         res.json({ status: 'Update successfully' });
     } catch (err) {
         // Handle errors and send an error response.
-        res.status(500).json({ error: err });
+        res.status(400).json({ error: err });
     }
 }
 

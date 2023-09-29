@@ -21,8 +21,7 @@ export class EventDatabaseService {
   }
 
   deleteEvent(eventId: any) {
-    let url = '/zecan/api/v1/delete-event/?eventId=' + eventId; // url is correct??
-    console.log(url);
+    let url = '/zecan/api/v1/delete-event/?eventId=' + eventId;
     return this.http.delete(url, httpOptions);
   }
 
@@ -34,6 +33,10 @@ export class EventDatabaseService {
   displayEvent(eventId: any) {
     let url = '/zecan/api/v1/display-event/?eventId=' + eventId;
     return this.http.post(url,httpOptions);
+  }
+
+  showStatistic() {
+    return this.http.get('/zecan/api/v1/counter');
   }
 
 }

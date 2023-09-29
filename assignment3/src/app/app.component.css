@@ -1,0 +1,21 @@
+body {
+  background-color: #fcfaed;
+}
+.icon-image {
+  max-width: 300px; /* Adjust the maximum width as needed */
+  height: auto;
+}
+.panel {
+  background-color: rgba(223, 255, 211, 0.56);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 10px;
+  width: 200px;
+  text-align: center;
+}
+.panel-container {
+  display: flex; /* Display panels horizontally */
+  justify-content: center;
+}
