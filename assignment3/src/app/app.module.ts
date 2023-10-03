@@ -15,6 +15,7 @@ import { InvalidDataComponent } from './components/invalid-data/invalid-data.com
 import { ShowStatisticComponent } from './components/event/show-statistic/show-statistic.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { TransformMinutePipe } from './pipes/transform-minute.pipe';
 
 const routes: Routes = [
   {path: 'add-event', component: AddEventComponent},
@@ -36,7 +37,8 @@ const routes: Routes = [
     UpdateEventComponent,
     InvalidDataComponent,
     ShowStatisticComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    TransformMinutePipe
   ],
   imports: [
     BrowserModule, RouterModule.forRoot(routes, {useHash: true}), HttpClientModule, FormsModule, ServiceWorkerModule.register('ngsw-worker.js', {

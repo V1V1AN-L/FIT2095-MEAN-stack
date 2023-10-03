@@ -57,7 +57,7 @@ const eventSchema = new mongoose.Schema({
  * @name pre-save
  */
 eventSchema.pre('save', function (next) {
-    this.displayDuration = convertMinutesToHoursAndMinutes(this.duration);
+    // this.displayDuration = convertMinutesToHoursAndMinutes(this.duration);
     this.endDate = new Date(this.startDate.getTime() + this.duration * 60000);
     this.eventID = generateEventID();
     this.isActive = true;

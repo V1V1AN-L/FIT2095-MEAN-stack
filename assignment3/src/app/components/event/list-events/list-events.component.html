@@ -25,7 +25,7 @@
             <td>{{event.name }}</td>
             <td>{{event.startDate }}</td>
             <td>{{event.endDate }}</td>
-            <td>{{event.displayDuration }}</td>
+            <td>{{event.duration|transformMinute }}</td>
 <!--            <td>-->
 <!--                <% if (event.isActive) { }}-->
 <!--    <span>&#10004;</span> &lt;!&ndash; Unicode character for a tick mark &ndash;&gt;-->
