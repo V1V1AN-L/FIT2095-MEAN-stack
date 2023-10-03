@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -14,6 +14,7 @@ import {FormsModule} from "@angular/forms";
 import { InvalidDataComponent } from './components/invalid-data/invalid-data.component';
 import { ShowStatisticComponent } from './components/event/show-statistic/show-statistic.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 const routes: Routes = [
   {path: 'add-event', component: AddEventComponent},
@@ -38,7 +39,12 @@ const routes: Routes = [
     PageNotFoundComponent
   ],
   imports: [
-    BrowserModule, RouterModule.forRoot(routes, {useHash: true}), HttpClientModule, FormsModule
+    BrowserModule, RouterModule.forRoot(routes, {useHash: true}), HttpClientModule, FormsModule, ServiceWorkerModule.register('ngsw-worker.js', {
+  enabled: !isDevMode(),
+  // Register the ServiceWorker as soon as the application is stable
+  // or after 30 seconds (whichever comes first).
+  registrationStrategy: 'registerWhenStable:30000'
+})
   ],
   providers: [EventDatabaseService],
   bootstrap: [AppComponent]
