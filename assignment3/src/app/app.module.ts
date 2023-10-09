@@ -16,6 +16,7 @@ import { ShowStatisticComponent } from './components/event/show-statistic/show-s
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { TransformMinutePipe } from './pipes/transform-minute.pipe';
+import { StringTranslationComponent } from './components/string-translation/string-translation.component';
 
 const routes: Routes = [
   {path: 'add-event', component: AddEventComponent},
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: 'update-event', component: UpdateEventComponent},
   {path: 'invalid-data', component: InvalidDataComponent},
   {path: 'show-statistic', component: ShowStatisticComponent},
+  {path: 'string-translation', component: StringTranslationComponent},
   {path: '*', component: PageNotFoundComponent}
 ];
 @NgModule({
@@ -38,7 +40,8 @@ const routes: Routes = [
     InvalidDataComponent,
     ShowStatisticComponent,
     PageNotFoundComponent,
-    TransformMinutePipe
+    TransformMinutePipe,
+    StringTranslationComponent
   ],
   imports: [
     BrowserModule, RouterModule.forRoot(routes, {useHash: true}), HttpClientModule, FormsModule, ServiceWorkerModule.register('ngsw-worker.js', {

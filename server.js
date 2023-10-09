@@ -20,6 +20,18 @@ const app = express();
 app.use(express.json());
 const mongoose = require("mongoose");
 
+const server = require('http').Server(app);
+const io = require('socket.io')(server);
+const {Translate} = require('@google-cloud/translate').v2;
+const translate = new Translate();
+io.on('connection', (socket) => {
+   socket.on('inputString', async (data) => {
+       const translatedText = await translate.translate(data.text, data.language);
+       io.emit('translatedText', translatedText);
+   });
+
+});
+
 /**
  * Connect to MongoDB
  *
@@ -89,7 +101,6 @@ app.use(express.static(path.join(__dirname, 'assignment3/dist/assignment3')));
  * This block imports and uses the router for category-related routes.
  * It maps the router to the root URL path ('/') to handle category-related requests.
  */
-const Counter = require("./backend/models/counter");
 const counterRouter = require("./backend/routes/counter_router");
 app.use('/', counterRouter);
 
@@ -133,6 +144,9 @@ app.get("*", function (request, response) {
     response.redirect('/');
 });
 
+
+
+
 /**
  * Start Server
  *
@@ -143,4 +157,4 @@ app.get("*", function (request, response) {
  * @default
  */
 const PORT_NUMBER = 8080;
-app.listen(PORT_NUMBER);
+server.listen(PORT_NUMBER);

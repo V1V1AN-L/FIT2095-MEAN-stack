@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="form-group">
+    <label for="textToTranslate">Enter text to translate:</label>
+    <textarea class="form-control"  id="textToTranslate"  [(ngModel)]="inputString" rows="6"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="selectLanguage">Select Language:</label>
+    <select class="form-control" id="selectLanguage" [(ngModel)]="selectedLanguage">
+      <option value="zh-CN">Chinese</option>
+      <option value="hi">Hindi</option>
+      <option value="ko">Korean</option>
+    </select>
+  </div>
+  <button class="btn btn-primary" (click)="translateText()">Translate</button>
+  <div class="translated-text" *ngIf="translatedText">
+    <h3>Translated Text:</h3>
+    <p>{{ translatedText }}</p>
+  </div>
+</div>
