@@ -41,7 +41,7 @@ const routes: Routes = [
     ShowStatisticComponent,
     PageNotFoundComponent,
     TransformMinutePipe,
-    StringTranslationComponent
+    StringTranslationComponent,
   ],
   imports: [
     BrowserModule, RouterModule.forRoot(routes, {useHash: true}), HttpClientModule, FormsModule, ServiceWorkerModule.register('ngsw-worker.js', {

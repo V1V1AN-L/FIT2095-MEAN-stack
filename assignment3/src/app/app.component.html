@@ -1,56 +1,37 @@
-<!--<div class="text-center">-->
-<!--  <img src="./assets/images/Design.gif" alt="Header Image" class="img-fluid">-->
-<!--</div>-->
-<div class="container my-5 text-center">
-  <h2 class="mb-4">Welcome to the Event Management System</h2>
-  <!--  <div class="panel-container">-->
-<!--    <div class="panel">-->
-<!--      <h2><%= currentEventsCounter %></h2>-->
-<!--      <p>Events</p>-->
-<!--    </div>-->
-<!--    <div class="panel">-->
-<!--      <h2><%= currentCategoryCounter %></h2>-->
-<!--      <p>Categories</p>-->
-<!--    </div>-->
-<!--    <div class="panel">-->
-<!--      <h2><%= recordsCreated %></h2>-->
-<!--      <p>Records Created</p>-->
-<!--    </div>-->
-<!--    <div class="panel">-->
-<!--      <h2><%= recordsDeleted %></h2>-->
-<!--      <p>Records Deleted</p>-->
-<!--    </div>-->
-<!--    <div class="panel">-->
-<!--      <h2><%= recordsUpdated %></h2>-->
-<!--      <p>Records Updated</p>-->
-<!--    </div>-->
-<!--  </div>-->
+<body>
+  <div class="container my-5 text-center">
+    <img src="./assets/images/Design.gif" alt="Header GIF" class="img-fluid mb-4">
 
-  <h3 class="mt-5 mb-4">Task Group 1 (student#1)</h3>
-  <p>Carter Chin 32418361</p>
-  <div class="d-flex justify-content-center">
-    <a href="/category/32418361/add" class="btn btn-info mr-3">Add Category</a>
-    <a href="/category/32418361/listall" class="btn btn-info mr-3">List all categories</a>
-    <a href="/category/32418361/search-category?keyword=default" class="btn btn-info mr-3">List categories by keyword</a>
-    <a href="/32418361/event/ZGO-8579" class="btn btn-info mr-3">Show Event Details</a>
-    <a href="/category/32418361/delete-category" class="btn btn-info mr-3">Delete Category By ID</a>
+    <h2 class="mb-4">Welcome to the Event Management System</h2>
+
+
+    <h3 class="mt-5 mb-4">Task Group 1 (student#1)</h3>
+    <p>Carter Chin 32418361</p>
+    <div class="d-flex justify-content-center">
+      <a href="/category/32418361/add" class="btn btn-info mr-3">Add Category</a>
+      <a href="/category/32418361/listall" class="btn btn-info mr-3">List all categories</a>
+      <a href="/category/32418361/search-category?keyword=default" class="btn btn-info mr-3">List categories by keyword</a>
+      <a href="/32418361/event/ZGO-8579" class="btn btn-info mr-3">Show Event Details</a>
+      <a href="/category/32418361/delete-category" class="btn btn-info mr-3">Delete Category By ID</a>
+    </div>
+
+    <h3 class="mt-5 mb-4">Task Group 2 (student#2)</h3>
+    <p>Zecan Liu 25348914</p>
+    <div class="d-flex justify-content-center">
+      <a routerLink="/add-event" class="btn btn-info mr-3">Add Event</a>
+      <a routerLink="/list-events" class="btn btn-info mr-3">List all events</a>
+      <a routerLink="update-event" class="btn btn-info mr-3">Update event</a>
+      <a routerLink="/delete-events" class="btn btn-info mr-3">Delete Event</a>
+      <a routerLink="show-statistic" class="btn btn-info mr-3">Stats-Create, Update, Delete</a>
+      <a routerLink="string-translation" class="btn btn-info mr-3">Translator</a>
+    </div>
   </div>
 
-  <h3 class="mt-5 mb-4">Task Group 2 (student#2)</h3>
-  <p>Zecan Liu 25348914</p>
-  <div class="d-flex justify-content-center">
-    <a routerLink="/add-event" class="btn btn-info mr-3">Add Event</a>
-    <a routerLink="/list-events" class="btn btn-info mr-3">List all events</a>
-    <a routerLink="update-event" class="btn btn-info mr-3">Update event</a>
-    <a routerLink="/delete-events" class="btn btn-info mr-3">Delete Event By ID</a>
-    <a routerLink="show-statistic" class="btn btn-info mr-3">Stats-Create, Update, Delete</a>
-    <a routerLink="string-translation" class="btn btn-info mr-3">Translator</a>
+  <router-outlet></router-outlet>
+
+  <div class="text-center">
+    <h6 class="mb-4">Developed by: Zecan Liu & Carter Chin</h6>
+    <img src="./assets/images/team_icon.png" alt="Team icon" class="img-fluid icon-image">
   </div>
-</div>
 
-<router-outlet></router-outlet>
-
-<div class="text-center">
-  <h6 class="mb-4">Developed by: Zecan Liu & Carter Chin</h6>
-  <img src="./assets/images/team_icon.png" alt="Team icon" class="img-fluid icon-image">
-</div>
+</body>

@@ -1,6 +1,5 @@
 <div class="container mt-5">
   <div class="text-center">
-    <img src="./assets/images/Design.gif" alt="Header GIF" class="img-fluid mb-4">
     <h1 class="text-center mb-4">Event Detail</h1>
   </div>
 
@@ -24,7 +23,7 @@
     </tr>
     <tr>
       <th>Start Date Time</th>
-      <td>{{ event.startDate }}</td>
+      <td>{{ event.startDate | date: 'medium' }}</td>
     </tr>
     <tr>
       <th>Duration (minutes)</th>
@@ -32,7 +31,9 @@
     </tr>
     <tr>
       <th>Is Active</th>
-      <td>{{ event.isActive }}</td>
+      <td><span *ngIf="event.isActive == false">&#10008;</span> <!-- Unicode character for a cross mark -->
+        <span *ngIf="event.isActive == true">&#10004;</span> <!-- Unicode character for a tick mark -->
+      </td>
     </tr>
     <tr>
       <th>Capacity</th>

@@ -1,19 +1,27 @@
-<div class="container mt-5 d-flex flex-column align-items-center">
-  <img src="./assets/images/Design2.png" alt="Heading Image" class="img-fluid mb-4">
-  <h1 class="text-center mb-4">Update Event</h1>
-  <div class="form-group">
-    <label for="eventID">Event ID:</label>
-    <input type="text" class="form-control" id="eventID" [(ngModel)]="eventId" placeholder="Enter event Id" required>
-  </div>
-  <div class="form-group">
-    <label for="name">New Event Name:</label>
-    <input type="text" class="form-control" id="name" [(ngModel)]="name" placeholder="Enter event name" required>
-  </div>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="text-center mb-4">
+        <h1 class="mt-3">Update Event</h1>
+      </div>
+      <form>
+        <div class="form-group mb-3">
+          <label for="eventId">Event ID:</label>
+          <input type="text" class="form-control" id="eventId" [(ngModel)]="eventId" required>
+        </div>
+        <div class="form-group mb-3">
+          <label for="name">New Event Name:</label>
+          <input type="text" class="form-control" id="name" [(ngModel)]="name">
+        </div>
 
-  <div class="form-group">
-    <label for="capacity">New Capacity:</label>
-    <input type="number" class="form-control" id="capacity" [(ngModel)]="capacity" placeholder="Event capacity" required>
+        <div class="form-group mb-4">
+          <label for="capacity">New Capacity:</label>
+          <input type="number" class="form-control" id="capacity" [(ngModel)]="capacity">
+        </div>
+        <div class="mb-5">
+          <button type="submit" class="btn btn-primary" (click)="onUpdateEvent()">Update</button>
+        </div>
+      </form>
+    </div>
   </div>
-  <button type="submit" class="btn btn-primary" (click)="onUpdateEvent()">Update</button>
-
 </div>

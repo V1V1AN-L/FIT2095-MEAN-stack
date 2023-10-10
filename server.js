@@ -22,12 +22,13 @@ const mongoose = require("mongoose");
 
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
-const {Translate} = require('@google-cloud/translate').v2;
-const translate = new Translate();
+const { Translate } = require('@google-cloud/translate').v2;
+const translate = new Translate({key: 'AIzaSyByOppElzgMpQ6nMGdtX60ju8r6ULArYPU'});
+
 io.on('connection', (socket) => {
    socket.on('inputString', async (data) => {
        const translatedText = await translate.translate(data.text, data.language);
-       io.emit('translatedText', translatedText);
+       io.emit('translatedText', translatedText[0]);
    });
 
 });

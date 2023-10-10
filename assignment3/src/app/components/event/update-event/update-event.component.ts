@@ -10,7 +10,7 @@ import {HttpClient} from "@angular/common/http";
 export class UpdateEventComponent {
   eventId: string = '';
   name: string = '';
-  capacity: number = 0;
+  capacity: number | null = null;
   constructor(private eventDatabaseService: EventDatabaseService, private router: Router) {
   }
 
