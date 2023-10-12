@@ -8,10 +8,30 @@ import {HttpClient} from "@angular/common/http";
   styleUrls: ['./update-event.component.css']
 })
 export class UpdateEventComponent {
+  eventDB: any[] = [];
   eventId: string = '';
   name: string = '';
   capacity: number | null = null;
+  updateFlag: boolean = false;
   constructor(private eventDatabaseService: EventDatabaseService, private router: Router) {
+    this.showEvents();
+
+  }
+  showEvents() {
+    this.eventDatabaseService.listEvents().subscribe({
+
+      next:(result: any) => {
+        this.eventDB = result;
+      },
+      error:(error: any) => {
+        console.log(error);
+      }}
+    );
+  }
+
+  selectEvent(eventId: any) {
+    this.eventId = eventId;
+    this.updateFlag = true;
   }
 
   onUpdateEvent() {

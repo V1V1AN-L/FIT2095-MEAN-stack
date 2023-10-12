@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import{Router} from "@angular/router";
+
 
 @Component({
   selector: 'app-invalid-data',
@@ -6,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./invalid-data.component.css']
 })
 export class InvalidDataComponent {
+  constructor(private router: Router) {
+  }
+
+  returnHome() {
+    this.router.navigate(['/list-events']);
+  }
+
 
 }

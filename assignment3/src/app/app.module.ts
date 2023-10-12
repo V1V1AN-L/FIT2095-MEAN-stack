@@ -17,8 +17,10 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { TransformMinutePipe } from './pipes/transform-minute.pipe';
 import { StringTranslationComponent } from './components/string-translation/string-translation.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
 
 const routes: Routes = [
+  {path: '', component: HomePageComponent},
   {path: 'add-event', component: AddEventComponent},
   {path: 'list-events', component: ListEventsComponent},
   {path: 'delete-events', component: DeleteEventsComponent},
@@ -27,7 +29,7 @@ const routes: Routes = [
   {path: 'invalid-data', component: InvalidDataComponent},
   {path: 'show-statistic', component: ShowStatisticComponent},
   {path: 'string-translation', component: StringTranslationComponent},
-  {path: '*', component: PageNotFoundComponent}
+  {path: '**', component: PageNotFoundComponent}
 ];
 @NgModule({
   declarations: [
@@ -42,6 +44,7 @@ const routes: Routes = [
     PageNotFoundComponent,
     TransformMinutePipe,
     StringTranslationComponent,
+    HomePageComponent,
   ],
   imports: [
     BrowserModule, RouterModule.forRoot(routes, {useHash: true}), HttpClientModule, FormsModule, ServiceWorkerModule.register('ngsw-worker.js', {

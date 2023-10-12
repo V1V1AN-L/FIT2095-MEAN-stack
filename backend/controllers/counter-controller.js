@@ -5,7 +5,7 @@ async function getCUDStats(req,res){
         const counter = await Counter.findOne({});
         res.json(counter);
     }catch(err){
-        res.status(500).json({error:err});
+        res.status(400).json({error:err});
     }
 }
 

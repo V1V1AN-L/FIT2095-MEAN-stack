@@ -28,7 +28,7 @@ async function createEvent(req, res) {
     }
 
     // If categoryIds is still an empty array, add the single category.
-    categoryIds === [] ? categoryIds.push(obj.categories) : categoryIds;
+    categoryIds.length === 0 ? categoryIds.push(obj.categories) : categoryIds;
     let categories = await Category.find({categoryID: { $in: categoryIds }});
 
     try {
@@ -61,7 +61,7 @@ async function createEvent(req, res) {
         res.json({ eventId: anEvent.eventID });
     } catch (err) {
         // Handle errors and send an error response.
-        res.status(400).json({ error: err });
+        res.status(400).json({ error: "Invalid data" });
     }
 }
 
@@ -99,7 +99,7 @@ async function deleteEventById(req, res) {
 
         if (!event) {
             // If the event is not found, send a status message.
-            res.json({ status: 'Event not found' });
+            res.status(400).json({ status: 'Event not found' });
             return;
         }
 
@@ -147,7 +147,7 @@ async function updateEventById(req, res) {
 
         if (!updatedEvent) {
             // If the event is not found, send a status message.
-            res.json({ status: 'Event not found' });
+            res.status(400).json({ status: 'Event not found' });
             return;
         }
 
