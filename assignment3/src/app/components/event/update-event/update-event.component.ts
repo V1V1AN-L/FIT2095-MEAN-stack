@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {EventDatabaseService} from "../../../services/event-database.service";
 import {Router} from "@angular/router";
-import {HttpClient} from "@angular/common/http";
 @Component({
   selector: 'app-update-event',
   templateUrl: './update-event.component.html',
@@ -13,8 +12,10 @@ export class UpdateEventComponent {
   name: string = '';
   capacity: number | null = null;
   updateFlag: boolean = false;
+
   constructor(private eventDatabaseService: EventDatabaseService, private router: Router) {
     this.showEvents();
+    this.updateFlag = false;
 
   }
   showEvents() {
