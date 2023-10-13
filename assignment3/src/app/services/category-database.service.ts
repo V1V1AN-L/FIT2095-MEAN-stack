@@ -17,6 +17,12 @@ export class CategoryDatabaseService {
     return this.http.get('/api/v1/list-category');
   }
 
+  getCategory(categoryID: string) {
+    // Make a GET request to fetch category details by category ID
+    const url = `/api/v1/category/${categoryID}`;
+    return this.http.get(url);
+  }
+
   // deleteCategory(categoryId: any) {
   //   let url = `/api/v1/delete-category/?categoryId=${categoryId}`;
   //   return this.http.delete(url, httpOptions);

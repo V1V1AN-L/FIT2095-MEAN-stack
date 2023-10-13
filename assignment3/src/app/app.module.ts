@@ -30,6 +30,7 @@ const routes: Routes = [
   {path: 'list-events', component: ListEventsComponent},
   {path: 'delete-events', component: DeleteEventsComponent},
   {path: 'display-event', component: DisplayEventComponent},
+  { path: 'display-category', component: DisplayCategoryComponent },
   {path: 'update-event', component: UpdateEventComponent},
   { path: 'add-category', component: AddCategoryComponent }, 
   {path: 'list-category', component: ListCategoryComponent},

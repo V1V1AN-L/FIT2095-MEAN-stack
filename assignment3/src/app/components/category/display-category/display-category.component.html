@@ -1,1 +1,25 @@
-<p>display-category works!</p>
+<div class="container mt-5">
+    <div class="text-center">
+      <h1 class="text-center mb-4">{{ category.name }}</h1>
+    </div>
+  
+    <div class="form-container">
+      <div class="form-row">
+        <span class="form-label">Category Id:</span>
+        <div class="form-data">{{ category.categoryID }}</div>
+      </div>
+      <div class="form-row">
+        <span class="form-label">Name:</span>
+        <div class="form-data">{{ category.name }}</div>
+      </div>
+      <div class="form-row">
+        <span class="form-label">Description:</span>
+        <div class="form-data">{{ category.description }}</div>
+      </div>
+      <div class="form-row">
+        <span class="form-label">Created Date Time:</span>
+        <div class="form-data">{{ category.createdAt }}</div>
+      </div>
+    </div>
+  </div>
+  
