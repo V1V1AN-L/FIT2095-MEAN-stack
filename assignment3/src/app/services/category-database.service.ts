@@ -14,7 +14,7 @@ export class CategoryDatabaseService {
   }
 
   listCategories() {
-    return this.http.get('/api/v1/categories');
+    return this.http.get('/api/v1/list-category');
   }
 
   // deleteCategory(categoryId: any) {

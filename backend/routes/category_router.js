@@ -147,5 +147,5 @@ router.get('/32418361/search-category', function(req, res) {
 
 // module.exports = router;
 //the category database is needed for Task2.4
-exports.router = router;
-exports.categoryDatabase = categoryDatabase;
+// exports.router = router;
+// exports.categoryDatabase = categoryDatabase;

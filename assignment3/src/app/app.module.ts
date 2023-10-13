@@ -20,6 +20,8 @@ import { StringTranslationComponent } from './components/string-translation/stri
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { AddCategoryComponent } from './components/category/add-category/add-category.component';
 import { DisplayCategoryComponent } from './components/category/display-category/display-category.component';
+import { ListCategoryComponent } from './components/category/list-category/list-category.component';
+import { UppercasePipe } from './pipes/uppercase.pipe';
 
 
 const routes: Routes = [
@@ -29,12 +31,12 @@ const routes: Routes = [
   {path: 'delete-events', component: DeleteEventsComponent},
   {path: 'display-event', component: DisplayEventComponent},
   {path: 'update-event', component: UpdateEventComponent},
+  { path: 'add-category', component: AddCategoryComponent }, 
+  {path: 'list-category', component: ListCategoryComponent},
   {path: 'invalid-data', component: InvalidDataComponent},
   {path: 'show-statistic', component: ShowStatisticComponent},
   {path: 'string-translation', component: StringTranslationComponent},
-  {path: '**', component: PageNotFoundComponent},
-  { path: 'add-category', component: AddCategoryComponent }, // Add this line
-  { path: 'list-events', component: ListEventsComponent },
+  {path: '**', component: PageNotFoundComponent}
 ];
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ const routes: Routes = [
     HomePageComponent,
     AddCategoryComponent,
     DisplayCategoryComponent,
+    ListCategoryComponent,
+    UppercasePipe,
   ],
   imports: [
     BrowserModule, RouterModule.forRoot(routes, {useHash: true}), HttpClientModule, FormsModule, ServiceWorkerModule.register('ngsw-worker.js', {

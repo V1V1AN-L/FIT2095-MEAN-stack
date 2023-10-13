@@ -1,0 +1,36 @@
+<div class="container mt-5">
+  <div class="text-center">
+    <h1 class="text-center mb-4">Category List</h1>
+  </div>
+
+  <table class="table table-bordered">
+    <thead class="thead-light">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Image</th>
+        <th>Created Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of categories">
+        <td>{{ category.categoryID }}</td>
+        <td>{{ category.name | uppercase }}</td> <!-- Using the uppercase pipe here -->
+        <td>{{ category.description }}</td>
+        <td>
+          <img
+            [src]="category.image ? category.image : '/404.png'"
+            alt="Category Image"
+            class="category-image"
+          />
+        </td>
+        <td>{{ category.createdAt | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
+        <td>
+          <button type="submit" class="btn btn-primary" (click)="viewCategory(category.categoryID)">View</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
