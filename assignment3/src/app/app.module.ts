@@ -18,6 +18,9 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { TransformMinutePipe } from './pipes/transform-minute.pipe';
 import { StringTranslationComponent } from './components/string-translation/string-translation.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
+import { AddCategoryComponent } from './components/category/add-category/add-category.component';
+import { DisplayCategoryComponent } from './components/category/display-category/display-category.component';
+
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -29,7 +32,9 @@ const routes: Routes = [
   {path: 'invalid-data', component: InvalidDataComponent},
   {path: 'show-statistic', component: ShowStatisticComponent},
   {path: 'string-translation', component: StringTranslationComponent},
-  {path: '**', component: PageNotFoundComponent}
+  {path: '**', component: PageNotFoundComponent},
+  { path: 'add-category', component: AddCategoryComponent }, // Add this line
+  { path: 'list-events', component: ListEventsComponent },
 ];
 @NgModule({
   declarations: [
@@ -45,6 +50,8 @@ const routes: Routes = [
     TransformMinutePipe,
     StringTranslationComponent,
     HomePageComponent,
+    AddCategoryComponent,
+    DisplayCategoryComponent,
   ],
   imports: [
     BrowserModule, RouterModule.forRoot(routes, {useHash: true}), HttpClientModule, FormsModule, ServiceWorkerModule.register('ngsw-worker.js', {
